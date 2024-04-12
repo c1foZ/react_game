@@ -16,6 +16,8 @@ const Hero = () => {
             loop 
           />
         </div>
+        <p className='font-bold text-gray-500 pt-2'>Monitor your data analytics.</p>
+        <button className='uppercase bg-green-500 text-black w-[200px] font-bold rounded-lg mx-auto my-5 py-2'>Get started</button>
       </div>
     </div>
   );
