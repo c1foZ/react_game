@@ -27,10 +27,10 @@ const Navbar = () => {
               GAME.
           </h1>
           <ul className='pt-24 uppercase'>
-            <li className='p-4 border-b border-[#ff893ba1]'>Home</li>
-            <li className='p-4 border-b border-[#ff893ba1]'>Play</li>
-            <li className='p-4 border-b border-[#ff893ba1]'>About</li>
-            <li className='p-4'>Contact</li>
+            <li className='p-4 border-b border-[#ff893ba1]'><Link to={'/'}>Home</Link></li>
+            <li className='p-4 border-b border-[#ff893ba1]'><Link to={'/play'}>Play</Link></li>
+            <li className='p-4 border-b border-[#ff893ba1]'><Link to={'/about'}>About</Link></li>
+            <li className='p-4'><Link to={'/contact'}>Contact</Link></li>
           </ul>
         </div>
     </div>
