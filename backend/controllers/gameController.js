@@ -6,7 +6,10 @@ const createGame = async (req, res) => {
 
     try {
         const game = await Game.create({title, players, description} )
-        res.status(200).json(game)
+        res.status(200).json({ 
+            game: game,
+            message: 'Successfully added'
+        })
     } catch (error) {
         res.status(400).json({error: error.message})
     }
