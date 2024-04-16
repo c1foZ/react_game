@@ -1,11 +1,25 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 const TableGame = () => {
     const [showPopup, setShowPopup] = useState(false);
+    const [games, setGames] = useState(null)
 
     const togglePopup = () => {
         setShowPopup(!showPopup);
     }
+    
+    useEffect(() => {
+        const fetchGames = async () => {
+            const response = await fetch('/api/games/')
+            const json = await response.json();
+            
+            if(response.ok){
+                setGames(json)
+            }
+        }
+        fetchGames()
+    }, [])
+
   return (
     <div className='text-white w-full h-screen'>
         <div className='flex justify-end'>
@@ -31,11 +45,6 @@ const TableGame = () => {
         </div>
         )}
 
-
-
-
-
-
         <div class="container mx-auto">
             <table class="min-w-full bg-gray-950 my-6">
                 <thead>
@@ -46,16 +55,13 @@ const TableGame = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="px-6 py-4 border-b border-gray-200">John Doe</td>
-                    <td class="px-6 py-4 border-b border-gray-200">30</td>
-                    <td class="px-6 py-4 border-b border-gray-200">Test Game 1</td>
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 border-b border-gray-200">Jane Smith</td>
-                    <td class="px-6 py-4 border-b border-gray-200">25</td>
-                    <td class="px-6 py-4 border-b border-gray-200">Test Game 2</td>
-                </tr>
+                {games && games.map((game) => (
+                    <tr>
+                        <td class="px-6 py-4 border-b border-gray-200">{game.title}</td>
+                        <td class="px-6 py-4 border-b border-gray-200">{game.players}</td>
+                        <td class="px-6 py-4 border-b border-gray-200">{game.description}</td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>
