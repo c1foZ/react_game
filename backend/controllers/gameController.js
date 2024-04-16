@@ -51,9 +51,33 @@ const deleteGame = async (req, res) => {
     }
 }
 
+const updateGame = async (req, res) => {
+    const { id } = req.params;
+    const { title, players, description } = req.body;
+
+    try {
+        const game = await Game.findById(id);
+        if (!game) {
+            return res.status(404).json({ message: 'Game not found' });
+        }
+
+        game.title = title;
+        game.players = players;
+        game.description = description;
+
+        await game.save();
+
+        res.status(200).json({ message: 'Game updated successfully', updatedGame: game });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+
 module.exports = {
     createGame,
     getAllGames,
     getGame,
-    deleteGame
+    deleteGame,
+    updateGame
 }
