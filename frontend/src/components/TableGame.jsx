@@ -34,8 +34,8 @@ const TableGame = () => {
 
   return (
     <div className='text-white w-full h-screen'>
-        <div className='flex justify-end'>
-            <div className='mr-28 py-2 text-center text-black font-bold rounded-lg bg-orange-400 w-[200px]'>
+        <div className='container flex justify-end mx-auto'>
+            <div className='py-2 text-center text-black font-bold rounded-lg bg-orange-400 w-[200px]'>
                 <button onClick={togglePopup}>Create a game</button>
             </div>
         </div>
@@ -44,12 +44,12 @@ const TableGame = () => {
           <div className="bg-gray-800 p-8 rounded-lg w-[500px]">
             <h2 className="text-orange-400 text-lg font-bold mb-4">Create a game</h2>
             <div className='my-4'>
-                <p>Number of Players</p>
-                <input className='text-black p-2' type='number' placeholder='Type a number'/>
+                <p className='my-2'>Number of Players</p>
+                <input className='text-black p-2 rounded-xl' type='number' placeholder='Type a number'/>
             </div>
             <div className='my-4'>
-                <p>Description</p>
-                <input className='text-black p-2' type='text' placeholder='Type a text'/>
+                <p className='my-2'>Description</p>
+                <textarea className='text-black p-2 w-full min-h-28 max-h-52 rounded-xl' type='text' placeholder='Type a text'/>
             </div>
             <button className='mr-6 font-bold bg-orange-400 text-black uppercase p-2 rounded' onClick={togglePopup}>Submit</button>
             <button onClick={togglePopup}>Close</button>
