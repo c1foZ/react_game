@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Hero from "./Hero";
-import Analytics from "./Analytics";
+import About from "./About";
 import Contact from "./Contact";
 
 function HomeComponent() {
@@ -9,7 +9,7 @@ function HomeComponent() {
     <div> 
         <Navbar />
         <Hero />
-        <Analytics />
+        <About />
         <Contact />
     </div>
   )

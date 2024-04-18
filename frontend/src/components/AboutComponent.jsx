@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Analytics from './Analytics'
+import About from './About'
 
 function AboutComponent() {
   return (
     <div>
         <Navbar />
-        <Analytics />
+        <About />
     </div>
   )
 }
