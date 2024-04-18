@@ -11,8 +11,6 @@ const CreateGame = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        
             const response = await fetch('/api/games', {
                 method: 'POST',
                 headers: {
