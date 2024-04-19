@@ -6,7 +6,7 @@ const TableGame = () => {
     
     useEffect(() => {
         const fetchGames = async () => {
-            const response = await fetch('/api/games/')
+            const response = await fetch('http://localhost:4000/api/games/')
             const json = await response.json();
             
             if(response.ok){
@@ -17,7 +17,7 @@ const TableGame = () => {
     }, [])
 
     const deleteGame = async (id) => {
-        const response = await fetch(`/api/games/${id}`,{
+        const response = await fetch(`http://localhost:4000/api/games/${id}`,{
             method: 'DELETE'
         })
         const json = response.json();

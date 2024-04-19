@@ -11,7 +11,7 @@ const CreateGame = () => {
     }
 
     const handleSubmit = async (e) => {
-            const response = await fetch('/api/games', {
+            const response = await fetch('http://localhost:4000/api/games', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
