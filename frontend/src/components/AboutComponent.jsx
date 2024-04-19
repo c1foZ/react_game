@@ -5,8 +5,8 @@ import About from './About'
 function AboutComponent() {
   return (
     <div>
-        <Navbar />
-        <About />
+      <Navbar />
+      <About />
     </div>
   )
 }

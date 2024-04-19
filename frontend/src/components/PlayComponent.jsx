@@ -5,8 +5,8 @@ import TableGame from './TableGame'
 function PlayComponent() {
   return (
     <div>
-        <Navbar />
-        <TableGame />
+      <Navbar />
+      <TableGame />
     </div>
   )
 }

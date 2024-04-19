@@ -5,8 +5,8 @@ import Navbar from './Navbar'
 function ContactComponent() {
   return (
     <div>
-        <Navbar />
-        <Contact />
+      <Navbar />
+      <Contact />
     </div>
   )
 }
